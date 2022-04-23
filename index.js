@@ -29,7 +29,6 @@ router.get("/api/data/:mesto", async (req, res) => {
           req.query.endMonth
         ),
       ]);
-      console.log("test", airbnb);
       res.status(200).json({ air: airbnb, book: booking});
     } catch (err) {
       res.status(500).json({

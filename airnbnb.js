@@ -13,7 +13,6 @@ async function getAirbnb(cityName, fromDay, fromMonth, toDay, toMonth) {
   // odpri browser
   const page = await browser.newPage();
   await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36");
-  console.log(await page.evaluate(() => navigator.userAgent));
   // pejt na url
   await page.goto(page_url, { waitUntil: "networkidle2" });
 
