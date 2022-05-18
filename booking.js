@@ -50,6 +50,7 @@ async function getBookings(cityName, fromDay, fromMonth, toDay, toMonth) {
   // poberi vse ki ustrezajo querySelectorjAll in jih vrni kot list urejenih objectov
   const ponudbe = await page.evaluate(async () => {
     let list = document.querySelectorAll("[data-testid=property-card]");
+    // document.querySelectorAll ne vrne arraya ce pa spreadam pa rata array
 
     return [...list].map((el) => ({
       title: el.querySelector("[data-testid=title]")?.innerText,
