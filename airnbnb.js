@@ -16,10 +16,10 @@ async function getAirbnb(cityName, fromDay, fromMonth, toDay, toMonth) {
   // pejt na url
   await page.goto(page_url, { waitUntil: "networkidle2" });
 
-  await page.click(
+ /*  await page.click(
     "button._oda838"
   );
-
+ */
   await page.click(
     "div[data-testid=little-search-icon]"
   );
