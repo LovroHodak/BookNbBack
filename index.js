@@ -14,7 +14,7 @@ router.get("/api/data/:mesto", async (req, res) => {
   
     try {
       let error
-      
+
       //let error = undefined
       
       const [booking, airbnb] = await Promise.all([
@@ -34,6 +34,8 @@ router.get("/api/data/:mesto", async (req, res) => {
           req.query.endMonth
         ).catch((err) => {error = err; return []}),
       ]);
+      if (error)
+        console.log(error)
       if (!airbnb.length && !booking.length && error){
         throw error
       }
@@ -59,7 +61,7 @@ const cors = require("cors");
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000"],
+    origin: ["http://localhost:3000", "https://booknb.netlify.app/"],
   })
 );
 

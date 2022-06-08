@@ -68,7 +68,7 @@ async function getBookings(cityName, fromDay, fromMonth, toDay, toMonth) {
       provider: "booking",
     }));
   });
-  console.log("Ponudbe so:", ponudbe);
+  //console.log("Ponudbe so:", ponudbe);
   // zapri browser
   await browser.close();
   return ponudbe;
