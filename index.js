@@ -61,7 +61,7 @@ const cors = require("cors");
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://booknb.netlify.app/"],
+    origin: ["http://localhost:3000", "https://booknb.netlify.app"],
   })
 );
 
