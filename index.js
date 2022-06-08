@@ -14,6 +14,7 @@ router.get("/api/data/:mesto", async (req, res) => {
   
     try {
       let error
+      
       //let error = undefined
       
       const [booking, airbnb] = await Promise.all([
