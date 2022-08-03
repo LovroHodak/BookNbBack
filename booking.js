@@ -20,7 +20,9 @@ async function getBookings(cityName, fromDay, fromMonth, toDay, toMonth) {
   // napisi split v input
   await page.type("input[name=ss]", cityName);
   // stisni na datum box da se odpre calendar
+  //console.log('book - before first click')
   await page.click(".xp__dates.xp__group");
+  //console.log('book - after first click')
   // stisni od datuma
   await page.evaluate(
     async (fromMonth, fromDay) => {

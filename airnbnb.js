@@ -41,7 +41,7 @@ console.log('loaded airbnb 1')
     async (fromMonth, fromDay) => {
       document
         .querySelector(
-          `div[data-testid='datepicker-day-2022-${fromMonth}-${fromDay}']`
+          `div[data-testid='calendar-day-${fromMonth}/${fromDay}/2022']`
         )
         .click();
     },
@@ -55,7 +55,7 @@ console.log('loaded airbnb 1')
       //console.log(`div[data-testid='datepicker-day-2022-${toMonth}-${toDay}']`);
       document
         .querySelector(
-          `div[data-testid='datepicker-day-2022-${toMonth}-${toDay}']`
+          `div[data-testid='calendar-day-${toMonth}/${toDay}/2022']`
         )
         .click();
     },
@@ -73,7 +73,8 @@ console.log('loaded airbnb 1')
   /* await page.waitForSelector("span[id^='title']"); */
   await page.waitForSelector("img._6tbg2q")
   // stisni room type
-  await page.click("button.v1tureqs.dir.dir-ltr");
+  //await page.click("button.v1tureqs.dir.dir-ltr");
+  await page.click('button.v4b1g6f.dir.dir-ltr')
   console.log('click room type')
 
 
@@ -110,15 +111,16 @@ console.log('loaded airbnb 1')
         Number(
           el.querySelector(
             'span.ru0q88m.dir.dir-ltr'
-          )?.textContent
+          )?.textContent.match(/[^\s]+/)
         ) * 2,
-         
+        
       price: Number(
         el
           .querySelector("span._tyxjp1")
           ?.textContent.match(/\d/g)
           .join("")
       ),
+      
       image: el.querySelector('img._6tbg2q').src,
      
       provider: 'airbnb'

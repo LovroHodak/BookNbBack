@@ -9,8 +9,8 @@ const getAirbnb = require('./airnbnb')
 
 
 router.get("/api/data/:mesto", async (req, res) => {
-    console.log("PARAMS", req.params);
-    console.log("QUERY", req.query);
+    //console.log("PARAMS", req.params);
+    //console.log("QUERY", req.query);
   
     try {
       let error
