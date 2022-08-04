@@ -41,7 +41,7 @@ console.log('loaded airbnb 1')
     async (fromMonth, fromDay) => {
       document
         .querySelector(
-          `div[data-testid='calendar-day-${fromMonth}/${fromDay}/2022']`
+          `div[data-testid='calendar-day-${fromDay}/${fromMonth}/2022']`
         )
         .click();
     },
@@ -55,7 +55,7 @@ console.log('loaded airbnb 1')
       //console.log(`div[data-testid='datepicker-day-2022-${toMonth}-${toDay}']`);
       document
         .querySelector(
-          `div[data-testid='calendar-day-${toMonth}/${toDay}/2022']`
+          `div[data-testid='calendar-day-${toDay}/${toMonth}/2022']`
         )
         .click();
     },
